@@ -17,11 +17,6 @@ namespace Course_Registration.Controllers
 							 {
 							 return View();
 							 }
-					public IActionResult Course()
-							 {
-							 return View();
-							 }
-
 
 					public IActionResult Instructor()
 							 {
@@ -47,6 +42,19 @@ namespace Course_Registration.Controllers
 	};
 							 svm.Students = Stu;
 							 return View(svm);
+							 }
+
+					public IActionResult Course()
+							 {
+							 CourseViewModel cvm = new CourseViewModel();
+							 List<CRS.Course> Cor = new List<CRS.Course>()
+	{
+	new CRS.Course{ CourseId = 1, CourseNumber  = 23, CourseName = "C Sharp", Description= "This course is an introduction to computer programming for Windows. Emphasis will be on the fundamentals of structured design, development, testing, implementation, and documentation, including language syntax, data and file structures, input/output devices, files, and databases" },
+	new CRS.Course{ CourseId= 2, CourseNumber = 31, CourseName = "Word Processing", Description = "This training provide an knowledge in use of office automation, internet and internet tools." },
+	new CRS.Course{ CourseId = 3, CourseNumber = 11, CourseName= "Typing", Description = "Typing is the process of writing or inputting text by pressing keys on a typewriter, computer keyboard, cell phone, or calculator." }
+	};
+							 cvm.Courses = Cor;
+							 return View(cvm);
 							 }
 
 					[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
