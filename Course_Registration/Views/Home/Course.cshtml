@@ -1,5 +1,4 @@
 ﻿@*
-
 *@
 
 @{
@@ -7,7 +6,6 @@
 }
 <h1>Course</h1>
 
-<table class="table table-bordered">
 	<table class="table table-bordered">
 		<thead>
 			<tr>
@@ -20,16 +18,36 @@
 			</tr>
 		</thead>
 		<tbody>
-			@foreach (var item in @Model.Courses)
+			@foreach (var course in Model.Courses)
 				{
 				<tr>
-					<th scope="row">@item.CourseId</th>
-					<td>@item.CourseNumber</td>
-					<td>@item.CourseName</td>
-					<td>@item.Description</td>
+					<th scope="row">@course.CourseId</th>
+					<td>@course.CourseNumber</td>
+					<td onclick="showModal(course.CourseId)">@course.CourseName</td>
+					<td>@course.Description</td>
 
 				</tr>
 				}
 		</tbody>
 	</table>
-</table>
+
+
+	@*Can not get this code to call student model*@
+
+<div>
+	@foreach (var course in Model.Courses)
+	{
+		<div class="course-student-modal-@course.CourseId">
+			
+		@*	@foreach (var Students in Model.Courses)
+			{
+				<p>A Student with the Id @Students </p>
+				
+			}*@
+			<button onclick="ShowModal(@course.CourseId)">Close</button>
+
+		 </div>
+		
+	}
+
+</div>

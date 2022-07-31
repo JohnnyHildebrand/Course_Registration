@@ -1,5 +1,4 @@
 ﻿@*
-
 *@
 @{
 	ViewData["Title"] = "Student";
@@ -18,14 +17,14 @@
 		</tr>
 	</thead>
 	<tbody>
-		@foreach (var item in @Model.Students)
+		@foreach (var student in @Model.Students)
 			{
 			<tr>
-				<th scope="row">@item.StudentId</th>
-				<td>@item.FirstName</td>
-				<td>@item.LastName</td>
-				<td>@item.EmailAddress</td>
-				<td>@item.PhoneNumber</td>
+				<th scope="row">@student.StudentId</th>
+				<td>@student.FirstName</td>
+				<td>@student.LastName</td>
+				<td>@student.EmailAddress</td>
+				<td>@student.PhoneNumber</td>
 			</tr>
 			}
 	</tbody>
