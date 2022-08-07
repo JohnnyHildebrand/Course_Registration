@@ -1,6 +1,6 @@
 ﻿@*
 *@
-
+@using System.Linq;
 @{
 	ViewData["Title"] = "Course";
 }
@@ -18,7 +18,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			@foreach (var course in Model.Courses)
+			@foreach (var course in Model)
 				{
 				<tr>
 					<th scope="row">@course.Id</th>
@@ -35,7 +35,7 @@
 	
 
 <div>
-	@foreach (var course in Model.Courses)
+	@foreach (var course in Model)
 	{
 		<div class="course-student-modal course-student-modal-@course.Id">
 

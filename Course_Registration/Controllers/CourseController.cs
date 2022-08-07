@@ -1,24 +1,26 @@
-﻿using Course_Registration.Models;
+﻿using Course_Registration.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
 namespace Course_Registration.Controllers
 		{
 		public class CourseController : Controller
 				{
-				/*private readonly CourseContext _context;
+				private readonly CourseContext _context;
 
 				public CourseController()
 						{
 						_context = new CourseContext();
 						}
 
-				public IActionResult Courses()
+				public IActionResult Course()
 						{
 						var courses = _context.Courses.Include(c => c.Students).ToList();
 						return View(courses);
-						}*/
+						}
 
-				public IActionResult Course()
+				/*public IActionResult Course()
 						{
 						Course courses = new Course();
 						List<Course> Cor = new List<Course>()
@@ -50,7 +52,7 @@ namespace Course_Registration.Controllers
 		};
 						courses.Courses = Cor;
 						return View(courses);
-						}
+						}*/
 				}
 		}
 
