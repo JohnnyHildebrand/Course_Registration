@@ -21,9 +21,9 @@
 			@foreach (var course in Model.Courses)
 				{
 				<tr>
-					<th scope="row">@course.CourseId</th>
+					<th scope="row">@course.Id</th>
 					<td>@course.CourseNumber</td>
-					<td onclick ="showModal(@course.CourseId)">@course.CourseName</td>
+					<td onclick ="showModal(@course.Id)">@course.CourseName</td>
 					<td>@course.Description</td>
 
 				</tr>
@@ -37,16 +37,16 @@
 <div>
 	@foreach (var course in Model.Courses)
 	{
-		<div class="course-student-modal course-student-modal-@course.CourseId">
+		<div class="course-student-modal course-student-modal-@course.Id">
 
 			<h3>@course.CourseName Students:</h3>
 			
 			@foreach (var Student in course.Students)
 			{
-				<p>A Student with the Id @Student.StudentId </p>
+				<p>A Student with the Id @Student.Id </p>
 				
 			}
-			<button onclick="hideModal(@course.CourseId)">Close</button>
+			<button onclick="hideModal(@course.Id)">Close</button>
 
 		 </div>
 		
