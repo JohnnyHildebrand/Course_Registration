@@ -17,14 +17,14 @@
 		</tr>
 	</thead>
 	<tbody>
-		@foreach (var item in @Model.Instructors)
+		@foreach (var instructor in Model)
 			{
 			<tr>
-				<th scope="row">@item.Id</th>
-				<td>@item.FirstName</td>
-				<td>@item.LastName</td>
-				<td>@item.EmailAddress</td>
-				<td>@item.Course</td>
+				<th scope="row">@instructor.Id</th>
+				<td>@instructor.FirstName</td>
+				<td>@instructor.LastName</td>
+				<td>@instructor.EmailAddress</td>
+				<td>@instructor.Course</td>
 			</tr>
 			}
 	</tbody>

@@ -6,10 +6,12 @@ namespace Course_Registration.Data
 
 
 		public class CourseContext : DbContext
+
 				{
 
 				public DbSet<Course> Courses { get; set; }
 				public DbSet<Student> Students { get; set; }
+
 
 				protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 						{

@@ -21,6 +21,6 @@ namespace Course_Registration.Data
 								.WithMany(c => c.Students);
 						}
 
-						
+
 				}
 		}

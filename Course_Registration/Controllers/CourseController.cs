@@ -24,9 +24,11 @@ namespace Course_Registration.Controllers
 				[HttpPost]
 				public IActionResult AddCourse(Course course)
 						{
+
 						_context.Courses.Add(course);
 						_context.SaveChanges();
 						return RedirectToAction(nameof(Course));
+
 						}
 
 				public IActionResult AddCourse()
@@ -35,7 +37,7 @@ namespace Course_Registration.Controllers
 						return View(new Course());
 						}
 
-			
+
 				}
 		}
 
