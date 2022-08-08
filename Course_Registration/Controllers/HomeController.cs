@@ -44,7 +44,7 @@ namespace Course_Registration.Controllers
 						}
 
 
-				public IActionResult Student()
+			/*	public IActionResult Student()
 						{
 						Student students = new Student();
 						List<Student> Stu = new List<Student>()
@@ -67,7 +67,7 @@ namespace Course_Registration.Controllers
 	};
 						students.Students = Stu;
 						return View(students);
-						}
+						}*/
 
 
 				[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
