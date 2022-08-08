@@ -19,24 +19,25 @@ namespace Course_Registration.Controllers
 						return View(instructors);
 						}
 
-
-				[HttpPost]
+				[HttpPost]/*Post to sql Database*/
 				public IActionResult AddInstructor(Instructor instructor)
 						{
+						//Validation check fro required fields
+						if (ModelState.IsValid)
+								{
+								_context.Instructors.Add(instructor);
+								_context.SaveChanges();
+								}
+						else
+								{
+								return BadRequest(ModelState);
 
-
-						_context.Instructors.Add(instructor);
-						_context.SaveChanges();
+								}
 						return RedirectToAction(nameof(Instructor));
-
-						
-
-
 						}
 
 				public IActionResult AddInstructor()
 						{
-
 						return View(new Instructor());
 						}
 

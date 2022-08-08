@@ -21,21 +21,34 @@ namespace Course_Registration.Controllers
 						}
 
 
-				[HttpPost]
-				public IActionResult AddCourse(Course course)
+				[HttpPost] /*Post to sql Database*/
+ 				public IActionResult AddCourse(Course course)
 						{
+						//Validation check fro required fields
+						if (ModelState.IsValid)
+								{
+								_context.Courses.Add(course);
+								_context.SaveChanges();
 
-						_context.Courses.Add(course);
-						_context.SaveChanges();
+
+								}
+						else
+								{
+								return BadRequest(ModelState);
+
+								}
 						return RedirectToAction(nameof(Course));
-
 						}
+
 
 				public IActionResult AddCourse()
 						{
 
 						return View(new Course());
 						}
+
+
+
 
 
 				}

@@ -19,20 +19,25 @@ namespace Course_Registration.Controllers
 						var students = _context.Students.Include(c => c.Students).ToList();
 						return View(students);
 						}
-				[HttpPost]
+				
+				[HttpPost]/*Post to sql Database*/
 				public IActionResult AddStudent(Student student)
 						{
-
-						_context.Students.Add(student);
-						_context.SaveChanges();
+						//Validation check fro required fields
+						if (ModelState.IsValid)
+								{
+								_context.Students.Add(student);
+								_context.SaveChanges();
+								}
+						else
+								{
+								return BadRequest(ModelState);
+																}
 						return RedirectToAction(nameof(Student));
-
-
 						}
 
 				public IActionResult AddStudent()
 						{
-
 						return View(new Student());
 						}
 
