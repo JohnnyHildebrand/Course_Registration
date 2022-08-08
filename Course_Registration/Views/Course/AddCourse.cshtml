@@ -1,0 +1,28 @@
+﻿@model Course
+
+<form asp-action="AddCourse">
+
+	<div class=" border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="Text-primary">Add Course</h2>
+			<hr />
+			</div>
+	<div class=" mb-3">
+		<label asp-for="CourseNumber">Course Number</label>
+		<input asp-for="CourseNumber" class=" form-control"/>
+	</div>
+
+	<div class=" mb-3">
+		<label asp-for="CourseName">Course Name</label>
+		<input asp-for="CourseName"class=" form-control"/>
+	</div>
+
+	<div class=" mb-3">
+		<label asp-for="Description">Description</label>
+		<input asp-for="Description"class=" form-control"/>
+	</div>
+		 
+	<input type="submit" value="AddCourse" />
+	
+	</div>
+</form>

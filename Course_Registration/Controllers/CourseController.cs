@@ -1,7 +1,7 @@
 ﻿using Course_Registration.Data;
+using Course_Registration.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Diagnostics;
 
 namespace Course_Registration.Controllers
 		{
@@ -20,39 +20,22 @@ namespace Course_Registration.Controllers
 						return View(courses);
 						}
 
-				/*public IActionResult Course()
+
+				[HttpPost]
+				public IActionResult AddCourse(Course course)
 						{
-						Course courses = new Course();
-						List<Course> Cor = new List<Course>()
+						_context.Courses.Add(course);
+						_context.SaveChanges();
+						return RedirectToAction(nameof(Course));
+						}
 
-											{
-		new Course{
-					Id = 1,
-					CourseNumber  = 23,
-					CourseName = "C Sharp",
-					Description= "This course is an introduction to computer programming for Windows. Emphasis will be on the fundamentals of structured design, development, testing, implementation, and documentation, including language syntax, data and file structures, input/output devices, files, and databases",
-					Students = new List<Student>
-							{
-							new Student
-										{
-									Id = 123
-										},
-							new Student
-										{
-									Id = 221
-										},
-							new Student
-										{
-										Id = 334
-										}
-							}
-					},
+				public IActionResult AddCourse()
+						{
 
+						return View(new Course());
+						}
 
-		};
-						courses.Courses = Cor;
-						return View(courses);
-						}*/
+			
 				}
 		}
 

@@ -16,12 +16,12 @@ namespace Course_Registration.Data
 						optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=Course;Trusted_Connection=True;");
 						}
 
-			/*	protected override void OnModelCreating(ModelBuilder modelBuilder)
-						{
-						modelBuilder.Entity<Student>()
-								.HasMany(s => s.Courses)
-								.WithMany(c => c.Students);
-						}*/
+				/*	protected override void OnModelCreating(ModelBuilder modelBuilder)
+							{
+							modelBuilder.Entity<Student>()
+									.HasMany(s => s.Courses)
+									.WithMany(c => c.Students);
+							}*/
 
 
 
